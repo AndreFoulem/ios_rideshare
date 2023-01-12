@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		9022C554296FBD4800510F76 /* robodriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022C553296FBD4800510F76 /* robodriveApp.swift */; };
-		9022C556296FBD4800510F76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022C555296FBD4800510F76 /* ContentView.swift */; };
 		9022C558296FBD4900510F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9022C557296FBD4900510F76 /* Assets.xcassets */; };
 		9022C55B296FBD4900510F76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9022C55A296FBD4900510F76 /* Preview Assets.xcassets */; };
+		9022C569296FBF2900510F76 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022C568296FBF2900510F76 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9022C550296FBD4800510F76 /* robodrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = robodrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9022C553296FBD4800510F76 /* robodriveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = robodriveApp.swift; sourceTree = "<group>"; };
-		9022C555296FBD4800510F76 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9022C557296FBD4900510F76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9022C55A296FBD4900510F76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9022C568296FBF2900510F76 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +51,11 @@
 		9022C552296FBD4800510F76 /* robodrive */ = {
 			isa = PBXGroup;
 			children = (
-				9022C553296FBD4800510F76 /* robodriveApp.swift */,
-				9022C555296FBD4800510F76 /* ContentView.swift */,
+				9022C565296FBE1400510F76 /* App */,
+				9022C564296FBE1100510F76 /* Core */,
+				9022C563296FBE0E00510F76 /* Extensions */,
+				9022C562296FBE0B00510F76 /* Managers */,
+				9022C561296FBDFE00510F76 /* Models */,
 				9022C557296FBD4900510F76 /* Assets.xcassets */,
 				9022C559296FBD4900510F76 /* Preview Content */,
 			);
@@ -65,6 +68,59 @@
 				9022C55A296FBD4900510F76 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9022C561296FBDFE00510F76 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9022C562296FBE0B00510F76 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9022C563296FBE0E00510F76 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9022C564296FBE1100510F76 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9022C567296FBEBF00510F76 /* ViewModels */,
+				9022C566296FBEBC00510F76 /* Views */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9022C565296FBE1400510F76 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9022C553296FBD4800510F76 /* robodriveApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9022C566296FBEBC00510F76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9022C568296FBF2900510F76 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9022C567296FBEBF00510F76 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +193,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9022C556296FBD4800510F76 /* ContentView.swift in Sources */,
 				9022C554296FBD4800510F76 /* robodriveApp.swift in Sources */,
+				9022C569296FBF2900510F76 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
