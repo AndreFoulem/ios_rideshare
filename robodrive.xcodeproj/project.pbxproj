@@ -12,6 +12,12 @@
 		9022C55B296FBD4900510F76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9022C55A296FBD4900510F76 /* Preview Assets.xcassets */; };
 		9022C569296FBF2900510F76 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022C568296FBF2900510F76 /* HomeView.swift */; };
 		9022C56B296FC04200510F76 /* RobodriveMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022C56A296FC04200510F76 /* RobodriveMapViewRepresentable.swift */; };
+		904426022970D66B0083709E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904426012970D66B0083709E /* LocationManager.swift */; };
+		90BB75E3297242EA00B75A01 /* LocationSearchActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB75E2297242EA00B75A01 /* LocationSearchActivationView.swift */; };
+		90BB75E52972491000B75A01 /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB75E42972491000B75A01 /* MapViewActionButton.swift */; };
+		90BB75E729724B0A00B75A01 /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB75E629724B0A00B75A01 /* LocationSearchView.swift */; };
+		90BB75E92972500E00B75A01 /* LocationSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB75E82972500E00B75A01 /* LocationSearchResultCell.swift */; };
+		90BB75EB29725FFB00B75A01 /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB75EA29725FFB00B75A01 /* LocationSearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +27,13 @@
 		9022C55A296FBD4900510F76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9022C568296FBF2900510F76 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9022C56A296FC04200510F76 /* RobodriveMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobodriveMapViewRepresentable.swift; sourceTree = "<group>"; };
+		9022C56C296FC80600510F76 /* Youtube.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Youtube.md; sourceTree = "<group>"; };
+		904426012970D66B0083709E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		90BB75E2297242EA00B75A01 /* LocationSearchActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchActivationView.swift; sourceTree = "<group>"; };
+		90BB75E42972491000B75A01 /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
+		90BB75E629724B0A00B75A01 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
+		90BB75E82972500E00B75A01 /* LocationSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultCell.swift; sourceTree = "<group>"; };
+		90BB75EA29725FFB00B75A01 /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +73,7 @@
 				9022C561296FBDFE00510F76 /* Models */,
 				9022C557296FBD4900510F76 /* Assets.xcassets */,
 				9022C559296FBD4900510F76 /* Preview Content */,
+				9022C56C296FC80600510F76 /* Youtube.md */,
 			);
 			path = robodrive;
 			sourceTree = "<group>";
@@ -82,6 +96,7 @@
 		9022C562296FBE0B00510F76 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				904426012970D66B0083709E /* LocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -96,8 +111,8 @@
 		9022C564296FBE1100510F76 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				9022C567296FBEBF00510F76 /* ViewModels */,
-				9022C566296FBEBC00510F76 /* Views */,
+				90BB75DF2972423000B75A01 /* LocationSearch */,
+				90BB75DE2972420800B75A01 /* Home */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -115,6 +130,7 @@
 			children = (
 				9022C568296FBF2900510F76 /* HomeView.swift */,
 				9022C56A296FC04200510F76 /* RobodriveMapViewRepresentable.swift */,
+				90BB75E42972491000B75A01 /* MapViewActionButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,6 +140,42 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		90BB75DE2972420800B75A01 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9022C566296FBEBC00510F76 /* Views */,
+				9022C567296FBEBF00510F76 /* ViewModels */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		90BB75DF2972423000B75A01 /* LocationSearch */ = {
+			isa = PBXGroup;
+			children = (
+				90BB75E12972428400B75A01 /* ViewModel */,
+				90BB75E02972427D00B75A01 /* Views */,
+			);
+			path = LocationSearch;
+			sourceTree = "<group>";
+		};
+		90BB75E02972427D00B75A01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				90BB75E2297242EA00B75A01 /* LocationSearchActivationView.swift */,
+				90BB75E629724B0A00B75A01 /* LocationSearchView.swift */,
+				90BB75E82972500E00B75A01 /* LocationSearchResultCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		90BB75E12972428400B75A01 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				90BB75EA29725FFB00B75A01 /* LocationSearchViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,9 +248,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BB75EB29725FFB00B75A01 /* LocationSearchViewModel.swift in Sources */,
+				90BB75E729724B0A00B75A01 /* LocationSearchView.swift in Sources */,
+				904426022970D66B0083709E /* LocationManager.swift in Sources */,
+				90BB75E52972491000B75A01 /* MapViewActionButton.swift in Sources */,
 				9022C554296FBD4800510F76 /* robodriveApp.swift in Sources */,
 				9022C569296FBF2900510F76 /* HomeView.swift in Sources */,
 				9022C56B296FC04200510F76 /* RobodriveMapViewRepresentable.swift in Sources */,
+				90BB75E3297242EA00B75A01 /* LocationSearchActivationView.swift in Sources */,
+				90BB75E92972500E00B75A01 /* LocationSearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +387,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"robodrive/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to get your location to find you a robot drive!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -357,6 +416,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"robodrive/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to get your location to find you a robot drive!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
