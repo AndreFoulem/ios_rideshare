@@ -14,6 +14,7 @@ struct RobodriveMapViewRepresentable: UIViewRepresentable {
   //-> Tell the user why we're requesting location -> In Project info
   //->  add the key: 'Privacy - Location When In Use Usage Description' + string prompt
   let locationManager = LocationManager()
+  @EnvironmentObject var locationViewModel: LocationSearchViewModel
   
   func makeUIView(context: Context) -> some UIView {
     // context.coordinator gives us access to the MapCoordinator Delegate
@@ -26,7 +27,9 @@ struct RobodriveMapViewRepresentable: UIViewRepresentable {
   }
   
   func updateUIView(_ uiView: UIViewType, context: Context) {
-      
+    if let selectedLocation = locationViewModel.selectedLocation {
+      print("debug \(selectedLocation)")
+    }
   }
   
 
