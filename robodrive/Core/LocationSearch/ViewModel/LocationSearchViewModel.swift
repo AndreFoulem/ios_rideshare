@@ -30,10 +30,32 @@ class LocationSearchViewModel: NSObject, ObservableObject {
   }
   
   //-> Helpers for the select location -> selectedLocation: String?
-  func selectLocation(_ location: String) {
-    self.selectedLocation = location
+  func selectLocation(_ localSearch: MKLocalSearchCompletion) {
+    locationSearch(forLocalSearchCompletion: localSearch) {
+      response, error in
+      if let error = error {
+        print("DEBUG: Location search failed with \(error.localizedDescription)")
+        return
+      }
+      
+      guard let item = response?.mapItems.first else { return }
+      let coordinate = item.placemark.coordinate
+      
+      print("Debug: locatin coordinate: \(coordinate)")
+    }
+  }
+    //-> grab the title and substring and search the location to get a legit location object
+  func locationSearch(forLocalSearchCompletion localSearch: MKLocalSearchCompletion, completion: @escaping MKLocalSearch.CompletionHandler) {
+    
+    let searchRequest = MKLocalSearch.Request()
+    searchRequest.naturalLanguageQuery  = localSearch.title.appending(localSearch.subtitle)
+    let search = MKLocalSearch(request: searchRequest)
+    
+    //-> completionHandler is the callback that return results
+    search.start(completionHandler: completion)
     
   }
+  
 }
 
 //-> MKLocalSearchCompleterDelegate

@@ -58,7 +58,7 @@ struct LocationSearchView: View {
                 .onTapGesture {
                   //-> model needs be before toggling
                   viewModel
-                    .selectLocation(result .title)
+                    .selectLocation(result)
                   
                   showLocationSearchView.toggle()
                 }
