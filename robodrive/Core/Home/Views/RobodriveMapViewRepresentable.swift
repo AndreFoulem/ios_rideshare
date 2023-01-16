@@ -27,8 +27,9 @@ struct RobodriveMapViewRepresentable: UIViewRepresentable {
   }
   
   func updateUIView(_ uiView: UIViewType, context: Context) {
-    if let selectedLocation = locationViewModel.selectedLocation {
-      print("debug \(selectedLocation)")
+    //-> coordinate comes from clicking address selection
+    if let coordinate = locationViewModel.selectedLocationCoordinate {
+      context.coordinator.addAndSelectAnnotation(withCoordinate:  coordinate)
     }
   }
   
@@ -43,13 +44,21 @@ struct RobodriveMapViewRepresentable: UIViewRepresentable {
 
 extension RobodriveMapViewRepresentable {
   //-> MKMapViewDelegate gives SwiftUI functionality from UIKit
+  
   class  MapCoordinator: NSObject, MKMapViewDelegate {
+    
+    //-> MARK: Properties
+    
     let parent: RobodriveMapViewRepresentable
+    
+    //-> MARK: Lifecycle
     
     init(parent: RobodriveMapViewRepresentable) {
       self.parent = parent
       super.init()
     }
+    
+    //-> MARK: MKMapViewDelegate
     
     //-> ZOOM LOCATION
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
@@ -61,16 +70,17 @@ extension RobodriveMapViewRepresentable {
       parent.mapView.setRegion(region, animated: true)
     }
     
+    //-> MARK - helpers
+    func addAndSelectAnnotation(withCoordinate coordinate: CLLocationCoordinate2D){
+      //' remove all previous annotations
+      parent.mapView.removeAnnotations(parent.mapView.annotations)
+      let anno = MKPointAnnotation()
+      anno.coordinate = coordinate
+      self.parent.mapView.addAnnotation(anno)
+      self.parent.mapView.selectAnnotation(anno, animated: true)
+    }
+    
   }//MapCoordinator Class
   
 }//extension
 
-//-> CHATGPT CODE <-//
-  //  func makeUIView(context: Context) -> MKMapView {
-  //    return mapView
-  //  }
-  //
-  //  func updateUIView(_ uiView: MKMapView, context: Context) {
-  //      // This can be used to update the map view, if necessary.
-  //      // For example, if you need to change the region of the map, you can set the region property of the map view here.
-  //  }

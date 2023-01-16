@@ -12,7 +12,7 @@ class LocationSearchViewModel: NSObject, ObservableObject {
   
   //-> - Properties
   @Published var results = [MKLocalSearchCompletion]()
-  @Published var selectedLocation: String?
+  @Published var selectedLocationCoordinate: CLLocationCoordinate2D?
   
   private let searchCompleter = MKLocalSearchCompleter()
   var queryFragment: String = "" {
@@ -40,8 +40,9 @@ class LocationSearchViewModel: NSObject, ObservableObject {
       
       guard let item = response?.mapItems.first else { return }
       let coordinate = item.placemark.coordinate
+      self.selectedLocationCoordinate = coordinate
       
-      print("Debug: locatin coordinate: \(coordinate)")
+      print("\n-LocationSearchViewModel-\n location coordinate:\n \(coordinate)")
     }
   }
     //-> grab the title and substring and search the location to get a legit location object
