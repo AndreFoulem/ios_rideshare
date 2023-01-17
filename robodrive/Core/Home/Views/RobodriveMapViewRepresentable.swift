@@ -14,6 +14,7 @@ struct RobodriveMapViewRepresentable: UIViewRepresentable {
   //-> Tell the user why we're requesting location -> In Project info
   //->  add the key: 'Privacy - Location When In Use Usage Description' + string prompt
   let locationManager = LocationManager()
+  @Binding var mapState: MapViewState
   @EnvironmentObject var locationViewModel: LocationSearchViewModel
   
   func makeUIView(context: Context) -> some UIView {
@@ -28,11 +29,27 @@ struct RobodriveMapViewRepresentable: UIViewRepresentable {
   
   func updateUIView(_ uiView: UIViewType, context: Context) {
     //-> coordinate comes from clicking address selection
-    if let coordinate = locationViewModel.selectedLocationCoordinate {
-      context.coordinator.addAndSelectAnnotation(withCoordinate:  coordinate)
-      context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
-      
+    print("\n-updateViewUI: Map state is\n\(mapState)")
+    
+    switch mapState {
+      case .noInput:
+        context.coordinator.clearMapViewAndRecenterOnUserLocation()
+        break
+      case .searchingForLocation:
+        break
+      case .locationSelected:
+        if let coordinate = locationViewModel.selectedLocationCoordinate {
+          context.coordinator.addAndSelectAnnotation(withCoordinate:  coordinate)
+          context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
+        }
+        break
     }
+
+    
+
+//    if mapState == .noInput {
+//      context.coordinator.clearMapViewAndRecenterOnUserLocation()
+//    }
   }
   
 
@@ -56,6 +73,7 @@ extension RobodriveMapViewRepresentable {
     let parent: RobodriveMapViewRepresentable
     //: create a class level property
     var userLocationCoordinate: CLLocationCoordinate2D?
+    var currentRegion: MKCoordinateRegion?
     
     //-> MARK: Lifecycle
     
@@ -67,13 +85,15 @@ extension RobodriveMapViewRepresentable {
     //-> MARK: MKMapViewDelegate
     //-> ZOOM LOCATION
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-      //: feed the userLocationCoordinate
+ 
       self.userLocationCoordinate = userLocation.coordinate
+      
       let region = MKCoordinateRegion(
         center:CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude,
               longitude: userLocation.coordinate.longitude),
         span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
       )
+      self.currentRegion = region
       parent.mapView.setRegion(region, animated: true)
     }
     
@@ -128,6 +148,14 @@ extension RobodriveMapViewRepresentable {
       }
     }
     
+    func clearMapViewAndRecenterOnUserLocation() {
+      parent.mapView.removeAnnotations(parent.mapView.annotations)
+      parent.mapView.removeOverlays(parent.mapView.overlays)
+      if let currentRegion = currentRegion {
+        parent.mapView.setRegion(currentRegion, animated: true)
+      }
+    }
+
   }//MapCoordinator Class
   
 }//extension

@@ -15,7 +15,7 @@ struct HomeView: View {
   var body: some View {
     
     ZStack(alignment: .top) {
-      RobodriveMapViewRepresentable()
+      RobodriveMapViewRepresentable(mapState: $mapState)
         .ignoresSafeArea()
       
       if mapState == .searchingForLocation {
