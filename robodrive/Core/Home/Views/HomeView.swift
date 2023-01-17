@@ -10,7 +10,7 @@
 import SwiftUI
 
 struct HomeView: View {
-  @State private var showLocationSearchView = false
+  @State private var mapState = MapViewState.noInput
   
   var body: some View {
     
@@ -18,25 +18,23 @@ struct HomeView: View {
       RobodriveMapViewRepresentable()
         .ignoresSafeArea()
       
-      if showLocationSearchView {
+      if mapState == .searchingForLocation {
         //-> Bind the state since it is bound now in the search view
-        LocationSearchView(showLocationSearchView: $showLocationSearchView)
+        LocationSearchView(mapState: $mapState)
         
-      } else {
+      } else if mapState == .noInput {
         LocationSearchActivationView()
           .padding(.top, 72)
         //-> add animation
           .onTapGesture {
             withAnimation(.spring()){
-              showLocationSearchView.toggle()
+              mapState = .searchingForLocation
             }
           }
         
       }// ELSE
-        MapViewActionButton(showLocationSearchView:   $showLocationSearchView)
+        MapViewActionButton(mapState: $mapState)
           .padding(.leading)
-      
-      
     }//ZS
     
   }// BODY

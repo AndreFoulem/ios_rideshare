@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LocationSearchView: View {
   @State private var startLocationText = ""
-  @Binding var showLocationSearchView: Bool
+  @Binding var mapState: MapViewState
   @EnvironmentObject var viewModel: LocationSearchViewModel
     var body: some View {
       
@@ -59,8 +59,7 @@ struct LocationSearchView: View {
                   //-> model needs be before toggling
                   viewModel
                     .selectLocation(result)
-                  
-                  showLocationSearchView.toggle()
+                  mapState = .locationSelected
                 }
             }
           }
@@ -78,6 +77,6 @@ struct LocationSearchView: View {
 struct LocationSearchView_Previews: PreviewProvider {
     static var previews: some View {
       //-> always passed the bool from the binding in the Preview
-      LocationSearchView(showLocationSearchView: .constant(false))
+      LocationSearchView(mapState: .constant(.searchingForLocation))
     }
 }

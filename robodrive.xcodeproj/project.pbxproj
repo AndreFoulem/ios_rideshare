@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		901A719329762388006CAE18 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901A719229762388006CAE18 /* MapViewState.swift */; };
 		9022C554296FBD4800510F76 /* robodriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022C553296FBD4800510F76 /* robodriveApp.swift */; };
 		9022C558296FBD4900510F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9022C557296FBD4900510F76 /* Assets.xcassets */; };
 		9022C55B296FBD4900510F76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9022C55A296FBD4900510F76 /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		901A719229762388006CAE18 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 		9022C550296FBD4800510F76 /* robodrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = robodrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9022C553296FBD4800510F76 /* robodriveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = robodriveApp.swift; sourceTree = "<group>"; };
 		9022C557296FBD4900510F76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		9022C561296FBDFE00510F76 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				901A719229762388006CAE18 /* MapViewState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				90BB75EB29725FFB00B75A01 /* LocationSearchViewModel.swift in Sources */,
 				90BB75E729724B0A00B75A01 /* LocationSearchView.swift in Sources */,
 				904426022970D66B0083709E /* LocationManager.swift in Sources */,
+				901A719329762388006CAE18 /* MapViewState.swift in Sources */,
 				90BB75E52972491000B75A01 /* MapViewActionButton.swift in Sources */,
 				9022C554296FBD4800510F76 /* robodriveApp.swift in Sources */,
 				9022C569296FBF2900510F76 /* HomeView.swift in Sources */,
