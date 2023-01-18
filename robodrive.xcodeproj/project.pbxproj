@@ -14,6 +14,7 @@
 		9022C569296FBF2900510F76 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022C568296FBF2900510F76 /* HomeView.swift */; };
 		9022C56B296FC04200510F76 /* RobodriveMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022C56A296FC04200510F76 /* RobodriveMapViewRepresentable.swift */; };
 		904426022970D66B0083709E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904426012970D66B0083709E /* LocationManager.swift */; };
+		90BAB8112977A47600E4F6F5 /* RideRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAB8102977A47600E4F6F5 /* RideRequestView.swift */; };
 		90BB75E3297242EA00B75A01 /* LocationSearchActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB75E2297242EA00B75A01 /* LocationSearchActivationView.swift */; };
 		90BB75E52972491000B75A01 /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB75E42972491000B75A01 /* MapViewActionButton.swift */; };
 		90BB75E729724B0A00B75A01 /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB75E629724B0A00B75A01 /* LocationSearchView.swift */; };
@@ -31,6 +32,7 @@
 		9022C56A296FC04200510F76 /* RobodriveMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobodriveMapViewRepresentable.swift; sourceTree = "<group>"; };
 		9022C56C296FC80600510F76 /* Youtube.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Youtube.md; sourceTree = "<group>"; };
 		904426012970D66B0083709E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		90BAB8102977A47600E4F6F5 /* RideRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestView.swift; sourceTree = "<group>"; };
 		90BB75E2297242EA00B75A01 /* LocationSearchActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchActivationView.swift; sourceTree = "<group>"; };
 		90BB75E42972491000B75A01 /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
 		90BB75E629724B0A00B75A01 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		9022C564296FBE1100510F76 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				90BAB80F2977A44C00E4F6F5 /* Trips */,
 				90BB75DF2972423000B75A01 /* LocationSearch */,
 				90BB75DE2972420800B75A01 /* Home */,
 			);
@@ -143,6 +146,14 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		90BAB80F2977A44C00E4F6F5 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				90BAB8102977A47600E4F6F5 /* RideRequestView.swift */,
+			);
+			path = Trips;
 			sourceTree = "<group>";
 		};
 		90BB75DE2972420800B75A01 /* Home */ = {
@@ -254,6 +265,7 @@
 				90BB75EB29725FFB00B75A01 /* LocationSearchViewModel.swift in Sources */,
 				90BB75E729724B0A00B75A01 /* LocationSearchView.swift in Sources */,
 				904426022970D66B0083709E /* LocationManager.swift in Sources */,
+				90BAB8112977A47600E4F6F5 /* RideRequestView.swift in Sources */,
 				901A719329762388006CAE18 /* MapViewState.swift in Sources */,
 				90BB75E52972491000B75A01 /* MapViewActionButton.swift in Sources */,
 				9022C554296FBD4800510F76 /* robodriveApp.swift in Sources */,
