@@ -43,13 +43,9 @@ struct RobodriveMapViewRepresentable: UIViewRepresentable {
           context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
         }
         break
-    }
+        
+    }// Switch
 
-    
-
-//    if mapState == .noInput {
-//      context.coordinator.clearMapViewAndRecenterOnUserLocation()
-//    }
   }
   
 
