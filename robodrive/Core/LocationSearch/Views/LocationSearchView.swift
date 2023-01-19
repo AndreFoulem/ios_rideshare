@@ -57,9 +57,11 @@ struct LocationSearchView: View {
                 //->. pass the gesture corresponding to the bool binding
                 .onTapGesture {
                   //-> model needs be before toggling
-                  viewModel
-                    .selectLocation(result)
-                  mapState = .locationSelected
+                  withAnimation(.spring()) {
+                    viewModel
+                      .selectLocation(result)
+                    mapState = .locationSelected
+                  }
                 }
             }
           }

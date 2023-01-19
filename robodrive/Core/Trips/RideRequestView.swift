@@ -13,6 +13,7 @@ struct RideRequestView: View {
       Capsule()
         .foregroundColor(Color(.systemGray5))
         .frame(width: 48, height: 6)
+        .padding(.top, 12)
       
       //-> trip info view
       HStack {
@@ -22,13 +23,13 @@ struct RideRequestView: View {
             .frame(width:8, height:8)
           Rectangle()
             .fill(Color(.systemGray3))
-            .frame(width:1, height:32)
+            .frame(width:1, height:24)
           Rectangle()
             .fill(Color(.black))
             .frame(width:8, height:8)
         }// VS indicator view
         
-        VStack(alignment: .leading, spacing: 24) {
+        VStack(alignment: .leading, spacing: 16) {
           HStack {
             Text("Current Location")
               .font(.system(size: 16, weight: .semibold))
@@ -38,7 +39,7 @@ struct RideRequestView: View {
               .font(.system(size: 14, weight: .semibold))
               .foregroundColor(.gray)
           }
-          .padding(.bottom, 10)
+          .padding(.bottom, 6)
           
           HStack {
             Text("Starbucks Coffee")
@@ -50,7 +51,7 @@ struct RideRequestView: View {
               .foregroundColor(.gray)
           }
         }//VS current + dest locations
-        .padding(.leading, 8)
+        .padding(.leading, 6)
       
       }// HS trip info view
       .padding()
@@ -93,7 +94,7 @@ struct RideRequestView: View {
       .padding(.horizontal)
       
       Divider()
-        .padding(.vertical, 8)
+        .padding(.vertical, 6)
       
       //-> payment option view
       HStack(spacing: 12) {
@@ -135,7 +136,9 @@ struct RideRequestView: View {
       
       
     }// VS MAIN STACK
+    .padding(.bottom,36)
     .background(.white)
+    .cornerRadius(16)
     
     
   }//body

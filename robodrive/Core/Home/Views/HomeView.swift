@@ -14,28 +14,37 @@ struct HomeView: View {
   
   var body: some View {
     
-    ZStack(alignment: .top) {
-      RobodriveMapViewRepresentable(mapState: $mapState)
-        .ignoresSafeArea()
-      
-      if mapState == .searchingForLocation {
-        //-> Bind the state since it is bound now in the search view
-        LocationSearchView(mapState: $mapState)
+    ZStack(alignment: .bottom) {
+      ZStack(alignment: .top) {
+        RobodriveMapViewRepresentable(mapState: $mapState)
+          .ignoresSafeArea()
         
-      } else if mapState == .noInput {
-        LocationSearchActivationView()
-          .padding(.top, 72)
-        //-> add animation
-          .onTapGesture {
-            withAnimation(.spring()){
-              mapState = .searchingForLocation
+        if mapState == .searchingForLocation {
+          //-> Bind the state since it is bound now in the search view
+          LocationSearchView(mapState: $mapState)
+          
+        } else if mapState == .noInput {
+          LocationSearchActivationView()
+            .padding(.top, 72)
+          //-> add animation
+            .onTapGesture {
+              withAnimation(.spring()){
+                mapState = .searchingForLocation
+              }
             }
-          }
-        
-      }// ELSE
-        MapViewActionButton(mapState: $mapState)
-          .padding(.leading)
-    }//ZS
+          
+        }// ELSE
+          MapViewActionButton(mapState: $mapState)
+            .padding(.leading)
+      }
+      
+      if mapState == .locationSelected {
+        RideRequestView()
+          .transition(.move(edge: .bottom))
+      }
+    }//ZS MAIN
+    .edgesIgnoringSafeArea(.bottom)
+
     
   }// BODY
 }// STRUCT
