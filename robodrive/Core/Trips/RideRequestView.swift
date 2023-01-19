@@ -50,9 +50,9 @@ struct RideRequestView: View {
               .foregroundColor(.gray)
           }
         }//VS current + dest locations
-        .padding(.leading, 12)
+        .padding(.leading, 8)
       
-      }// HS
+      }// HS trip info view
       .padding()
       
       Divider()
@@ -65,7 +65,7 @@ struct RideRequestView: View {
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
       
-      ScrollView(.horizontal){
+      ScrollView(.horizontal) {
         HStack(spacing: 12) {
           ForEach(0..<3, id: \.self) { _ in
             VStack(alignment: .leading) {
@@ -80,18 +80,62 @@ struct RideRequestView: View {
                   .font(.system(size: 14, weight: .semibold))
                   .foregroundColor(.gray)
               }
+              .padding(8)
+           
             }
             .frame(width:112, height: 140)
             .background(Color(.systemGroupedBackground))
             .cornerRadius(10)
-          }
+        
+          }// FOR EACH
         }// HS
-      }// SV
-      //-> payment option view
+      }// SV car rides
+      .padding(.horizontal)
       
+      Divider()
+        .padding(.vertical, 8)
+      
+      //-> payment option view
+      HStack(spacing: 12) {
+        Text("Visa")
+          .font(.subheadline)
+          .fontWeight(.semibold)
+          .padding(6)
+          .background(.blue)
+          .cornerRadius(4)
+          .foregroundColor(.white)
+          .padding(.leading)
+        
+        Text("**** 1234")
+          .fontWeight(.bold)
+        
+        Spacer()
+        
+        Image(systemName: "chevron.right")
+          .imageScale(.medium)
+          .padding()
+      }// HS payments
+      .frame(height: 50)
+      .background(Color(.systemGroupedBackground))
+      .cornerRadius(10)
+      .padding(.horizontal)
       
       //-> request ride button
-    }// VS
+      Button {
+        
+      } label: {
+        Text("CONFIRM RIDE")
+          .fontWeight(.bold)
+          .frame(width: UIScreen.main.bounds.width - 32, height: 50)
+          .background(.blue)
+          .cornerRadius(10)
+          .foregroundColor(.white)
+        
+      }// BTN
+      
+      
+    }// VS MAIN STACK
+    .background(.white)
     
     
   }//body
