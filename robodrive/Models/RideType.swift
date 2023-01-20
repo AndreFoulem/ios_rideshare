@@ -8,17 +8,18 @@
 import Foundation
 
 enum RideType: Int, CaseIterable, Identifiable {
+  //-> Case iterable let us wrap the cases in an array
   case uberX
   case black
-  case uberXL
+  case cybertruck
   
   var id: Int { return rawValue }
   
   var description: String {
     switch self {
-      case .uberX: return "UberX"
-      case .black: return "UberBlack"
-      case .uberXL: return "UberXL"
+      case .uberX: return "ZOOX"
+      case .black: return "Google Car"
+      case .cybertruck: return "Cyber Truck"
     }
   }
   
@@ -26,9 +27,28 @@ enum RideType: Int, CaseIterable, Identifiable {
     switch self {
       case .uberX: return "uber-x"
       case .black: return "uber-black"
-      case .uberXL: return "uber-x"
+      case .cybertruck: return "cybertruck"
+    }
+  }
+  
+  var baseFare: Double {
+    switch self {
+      case .uberX: return 8
+      case .black: return 12
+      case .cybertruck: return 10
+    }
+  }
+  
+  func computePrice(for distanceInMeters: Double) -> Double {
+    let distanceInMiles = distanceInMeters / 1000
+
+      switch self {
+        case .uberX: return distanceInMiles * 1.5 + baseFare
+        case .black: return distanceInMiles * 2.0 + baseFare
+        case .cybertruck: return distanceInMiles * 1.75 + baseFare
+      }
     }
     
-  }
+  
   
 }

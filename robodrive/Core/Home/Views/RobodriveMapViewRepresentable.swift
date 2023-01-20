@@ -13,7 +13,7 @@ struct RobodriveMapViewRepresentable: UIViewRepresentable {
   // Init the LocationManager Class
   //-> Tell the user why we're requesting location -> In Project info
   //->  add the key: 'Privacy - Location When In Use Usage Description' + string prompt
-  let locationManager = LocationManager()
+  let locationManager = LocationManager.shared
   @Binding var mapState: MapViewState
   @EnvironmentObject var locationViewModel: LocationSearchViewModel
   
