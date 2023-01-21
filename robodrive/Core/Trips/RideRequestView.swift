@@ -34,11 +34,11 @@ struct RideRequestView: View {
         
         VStack(alignment: .leading, spacing: 16) {
           HStack {
-            Text("Current Location")
+            Text(locationViewModel.pickupTime ?? "")
               .font(.system(size: 16, weight: .semibold))
               .foregroundColor(.gray)
             Spacer()
-            Text("1:30pm")
+            Text(locationViewModel.dropOffTime ?? "")
               .font(.system(size: 14, weight: .semibold))
               .foregroundColor(.gray)
           }

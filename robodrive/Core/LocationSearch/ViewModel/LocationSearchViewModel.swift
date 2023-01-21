@@ -13,6 +13,8 @@ class LocationSearchViewModel: NSObject, ObservableObject {
   //-> - Properties
   @Published var results = [MKLocalSearchCompletion]()
   @Published var selectedRobodriveLocation: RobodriveLocation?
+  @Published var pickupTime: String?
+  @Published var dropOffTime: String?
   
   private let searchCompleter = MKLocalSearchCompleter()
   var queryFragment: String = "" {
@@ -68,7 +70,41 @@ class LocationSearchViewModel: NSObject, ObservableObject {
     let tripInDistanceMeters = userLocation.distance(from: destination)
     return type.computePrice(for: tripInDistanceMeters)
   }
-}
+  
+  func getDestinationRoute(from userLocation: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D, completion: @escaping(MKRoute) -> Void){
+    
+    let userPlacemark = MKPlacemark(coordinate: userLocation)
+    let destPlacemark = MKPlacemark(coordinate: destination)
+    let request = MKDirections.Request()
+    request.source = MKMapItem(placemark: userPlacemark)
+    request.destination = MKMapItem(placemark: destPlacemark)
+    
+    let directions = MKDirections(request: request)
+    
+    directions.calculate { response, error in
+      if let error = error {
+        print("\n-getDestinations\n Failed to get destinations\(error.localizedDescription)")
+        return
+      }
+      
+      guard let route = response?.routes.first else { return }
+      self.configurePickupAndDropoffTimes(with: route.expectedTravelTime)
+      completion(route)
+      
+    }
+  }// getDestinationRoute
+  
+  func configurePickupAndDropoffTimes(with expectedTravelTime: Double) {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "hh:mm a"
+    
+    pickupTime = formatter.string(from: Date())
+    dropOffTime = formatter.string(from: Date() + expectedTravelTime)
+  }
+  
+  
+  
+}// Class
 
 //-> MKLocalSearchCompleterDelegate
 extension LocationSearchViewModel: MKLocalSearchCompleterDelegate {
