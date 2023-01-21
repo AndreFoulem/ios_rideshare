@@ -15,6 +15,7 @@
 		9022C56B296FC04200510F76 /* RobodriveMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022C56A296FC04200510F76 /* RobodriveMapViewRepresentable.swift */; };
 		904426022970D66B0083709E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904426012970D66B0083709E /* LocationManager.swift */; };
 		904785162978C82300970ECD /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904785152978C82300970ECD /* RideType.swift */; };
+		9070294A297B656B004FB477 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90702949297B656B004FB477 /* Double.swift */; };
 		90BAB8112977A47600E4F6F5 /* RideRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BAB8102977A47600E4F6F5 /* RideRequestView.swift */; };
 		90BB75E3297242EA00B75A01 /* LocationSearchActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB75E2297242EA00B75A01 /* LocationSearchActivationView.swift */; };
 		90BB75E52972491000B75A01 /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB75E42972491000B75A01 /* MapViewActionButton.swift */; };
@@ -34,6 +35,7 @@
 		9022C56C296FC80600510F76 /* Youtube.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Youtube.md; sourceTree = "<group>"; };
 		904426012970D66B0083709E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		904785152978C82300970ECD /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
+		90702949297B656B004FB477 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		90BAB8102977A47600E4F6F5 /* RideRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestView.swift; sourceTree = "<group>"; };
 		90BB75E2297242EA00B75A01 /* LocationSearchActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchActivationView.swift; sourceTree = "<group>"; };
 		90BB75E42972491000B75A01 /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		9022C563296FBE0E00510F76 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				90702949297B656B004FB477 /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				90BB75E729724B0A00B75A01 /* LocationSearchView.swift in Sources */,
 				904426022970D66B0083709E /* LocationManager.swift in Sources */,
 				90BAB8112977A47600E4F6F5 /* RideRequestView.swift in Sources */,
+				9070294A297B656B004FB477 /* Double.swift in Sources */,
 				901A719329762388006CAE18 /* MapViewState.swift in Sources */,
 				90BB75E52972491000B75A01 /* MapViewActionButton.swift in Sources */,
 				9022C554296FBD4800510F76 /* robodriveApp.swift in Sources */,
