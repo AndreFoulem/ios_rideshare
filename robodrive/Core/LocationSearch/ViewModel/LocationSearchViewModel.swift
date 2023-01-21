@@ -12,7 +12,7 @@ class LocationSearchViewModel: NSObject, ObservableObject {
   
   //-> - Properties
   @Published var results = [MKLocalSearchCompletion]()
-  @Published var selectedLocationCoordinate: CLLocationCoordinate2D?
+  @Published var selectedRobodriveLocation: RobodriveLocation?
   
   private let searchCompleter = MKLocalSearchCompleter()
   var queryFragment: String = "" {
@@ -41,7 +41,7 @@ class LocationSearchViewModel: NSObject, ObservableObject {
       
       guard let item = response?.mapItems.first else { return }
       let coordinate = item.placemark.coordinate
-      self.selectedLocationCoordinate = coordinate
+      self.selectedRobodriveLocation = RobodriveLocation(title: localSearch.title, coordinate: coordinate)
       
       print("\n-LocationSearchViewModel-\n location coordinate:\n \(coordinate)")
     }
@@ -59,7 +59,7 @@ class LocationSearchViewModel: NSObject, ObservableObject {
   }
   
   func computeRidePrice(forType type: RideType) -> Double {
-    guard let destCoordinate = selectedLocationCoordinate else {return 0.0}
+    guard let destCoordinate = selectedRobodriveLocation?.coordinate else {return 0.0}
     guard let userCoordinate = self.userLocation else {return 0.0}
     
     let userLocation = CLLocation(latitude: userCoordinate.latitude,

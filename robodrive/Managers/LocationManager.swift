@@ -15,7 +15,6 @@ class LocationManager: NSObject, ObservableObject {
     super.init()
     locationManager.delegate = self
     
-    // Gives us best accuracy
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
     
     // System ask the user for auth

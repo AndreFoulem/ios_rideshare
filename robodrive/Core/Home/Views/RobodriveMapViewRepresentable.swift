@@ -29,7 +29,6 @@ struct RobodriveMapViewRepresentable: UIViewRepresentable {
   
   func updateUIView(_ uiView: UIViewType, context: Context) {
     //-> coordinate comes from clicking address selection
-    print("\n-updateViewUI: Map state is\n\(mapState)")
     
     switch mapState {
       case .noInput:
@@ -38,7 +37,7 @@ struct RobodriveMapViewRepresentable: UIViewRepresentable {
       case .searchingForLocation:
         break
       case .locationSelected:
-        if let coordinate = locationViewModel.selectedLocationCoordinate {
+        if let coordinate = locationViewModel.selectedRobodriveLocation?.coordinate {
           context.coordinator.addAndSelectAnnotation(withCoordinate:  coordinate)
           context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
         }

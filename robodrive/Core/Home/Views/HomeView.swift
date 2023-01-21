@@ -45,6 +45,7 @@ struct HomeView: View {
       }
     }//ZS MAIN
     .edgesIgnoringSafeArea(.bottom)
+    // recieve the user location when it's set
     .onReceive(LocationManager.shared.$userLocation) {
       location in
       if let location = location {

@@ -45,13 +45,12 @@ struct RideRequestView: View {
           .padding(.bottom, 8)
           
           HStack {
-            Text("Starbucks Coffee")
-              .font(.system(size: 16, weight: .semibold))
-              .foregroundColor(.indigo)
-            Spacer()
-            Text("1:45pm")
-              .font(.system(size: 14, weight: .semibold))
-              .foregroundColor(.gray)
+            if let location = locationViewModel.selectedRobodriveLocation {
+              Spacer()
+              Text(location.title)
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundColor(.gray)
+            }
           }
         }//VS current + dest locations
         .padding(.leading, 6)
@@ -81,7 +80,7 @@ struct RideRequestView: View {
               VStack(alignment: .leading,spacing:0) {
                 Text(type.description)
                   .font(.system(size: 14, weight: .semibold))
-                Text("$\(locationViewModel.computeRidePrice(forType: type))")
+                Text(locationViewModel.computeRidePrice(forType: type).toCurrency())
                   .font(.system(size: 14, weight: .semibold))
               }
               .padding(.leading)
